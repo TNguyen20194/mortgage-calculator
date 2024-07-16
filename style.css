@@ -1,0 +1,27 @@
+:root {
+    --cl-primary1: hsl(61, 70%, 52%);
+    --cl-primary2: hsl(4, 69%, 50%);
+
+    --cl-neutral: hsl(0, 0%, 100%);
+    --cl-neutral-100: hsl(202, 86%, 94%);
+    --cl-neutral-300: hsl(203, 41%, 72%);
+    --cl-neutral-500: hsl(200, 26%, 54%);
+    --cl-neutral-700: hsl(200, 24%, 40%);
+    --cl-neutral-900: hsl(202, 55%, 16%);
+
+    --ff-primary: "Plus Jakarta Sans", sans-serif;
+
+    --fw-light: 500;
+    --fw-bold: 700;
+
+    --fs-reg: 1rem;
+
+}
+
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    font-family: var(--ff-primary);
+}
