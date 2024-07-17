@@ -8,6 +8,7 @@ document.querySelectorAll('.mortgage-type').forEach(input => {
         document.querySelectorAll('.radio-input').forEach(div => {
             div.classList.remove('selected')
         })
+        
 
         if(this.checked){
             this.parentElement.classList.add('selected')
@@ -64,7 +65,7 @@ calculateButton.addEventListener('click', () => {
             el.classList.remove('eroor')
         })
     }
-
+ 
     if(isValid) {
         let monthlyPayment = 0;
         let totalRePayment= 0;
@@ -77,7 +78,7 @@ calculateButton.addEventListener('click', () => {
             const n = term * 12
             monthlyPayment = (amount * monthlyRate) / (1 - Math.pow((1 + monthlyRate), - n));
 
-            totalRePayment - monthlyPayment * n
+            totalRePayment = monthlyPayment * n
         } else if(mortgageType.value === 'interest-only') {
             monthlyPayment = (amount * rate) /12
             totalRePayment = monthlyPayment * term * 12
@@ -89,4 +90,23 @@ calculateButton.addEventListener('click', () => {
         document.getElementById('result').innerText = '';
         document.getElementById('term-result').innerText = '';
     }
+})
+
+document.getElementById('clear-btn').addEventListener('click', () => {
+    document.getElementById('mortgage-form').reset();
+    document.getElementById('result').innerText = '';
+    document.getElementById('term-result').innerText = '';
+    document.querySelectorAll('.form-alert').forEach(alert => {
+        alert.style.display = 'none';
+    })
+    defaultText.classList.remove('hide');
+    calculationsContainer.classList.remove('show');
+
+    document.querySelectorAll('.form-flex').forEach(el => {
+        el.classList.remove('error')
+    })
+})
+
+document.querySelectorAll('.form-alert').forEach(alert => {
+    alert.style.display = 'none';
 })

@@ -1,6 +1,7 @@
 :root {
-    --cl-primary1: hsl(61, 70%, 52%);
-    --cl-primary2: hsl(4, 69%, 50%);
+    --cl-primary-lime: hsl(61, 70%, 52%);
+    --cl-primary-lime-1: hsl(61, 70%, 80%);
+    --cl-primary-red: hsl(4, 69%, 50%);
 
     --cl-neutral: hsl(0, 0%, 100%);
     --cl-neutral-100: hsl(202, 86%, 94%);
@@ -8,11 +9,12 @@
     --cl-neutral-500: hsl(200, 26%, 54%);
     --cl-neutral-700: hsl(200, 24%, 40%);
     --cl-neutral-900: hsl(202, 55%, 16%);
+    --cl-neutral-1000: hsl(202, 55%, 12%);
 
     --ff-primary: "Plus Jakarta Sans", sans-serif;
 
-    --fw-light: 500;
-    --fw-bold: 700;
+    --fw-500: 500;
+    --fw-700: 700;
 
     --fs-reg: 1rem;
 
@@ -24,4 +26,260 @@ body {
     place-content: center;
     min-height: 100vh;
     font-family: var(--ff-primary);
+    background-color: var(--cl-neutral-100);
 }
+
+label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+input[type='number'] {
+    width: 100%;
+    padding: 0.23rem 0.5rem;
+    font-weight: var(--fw-700);
+    outline: 0;
+    border: 0;
+}
+
+input[type='radio'] {
+    appearance: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: 0.5rem;
+    outline: 2px solid var(--cl-neutral-900);
+    outline-offset: 3px;
+    border-radius: 50%;
+}
+
+input[type='radio']:checked {
+    background-color: var(--cl-primary-lime);
+}
+
+.radio-input {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: var(--fw-500);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--cl-neutral-300);
+}
+
+.radio-input > * {
+    cursor: pointer;
+}
+
+.radio-input:hover {
+    border: 1px solid var(--cl-primary-lime);
+}
+
+.radio-input label {
+    margin-bottom: 0;
+}
+
+.radio-input.selected {
+    background-color: var(--cl-primary-lime-1);
+    border: 1px solid var(--cl-primary-lime);
+}
+
+.radio-input.selected input[type='radio'] {
+    outline: 3px solid var(--cl-primary-lime);
+}
+
+button {
+    cursor: pointer;
+}
+
+.form-item {
+    margin-bottom: 2rem;
+} 
+
+.form-symbol {
+    background-color: var(--cl-neutral-100);
+    color: var(--cl-neutral-700);
+    padding: 0.5rem 0.75rem;
+    font-weight: var(--fw-700);
+}
+
+.form-group:where(:not(:last-child)) {
+   margin-bottom: 1.5rem; 
+}
+
+.form-flex {
+    display: flex;
+    border: 1px solid var(--cl-neutral-300);
+}
+
+.form-flex:hover {
+    border: 1px solid var(--cl-neutral-900);
+}
+
+.form-flex:focus-within {
+    border: 1px solid var(--cl-primary-lime);
+}
+
+.form-flex:focus-within .form-symbol {
+    background-color: var(--cl-primary-lime);
+    border: 1px solid var(--cl-primary-lime);
+}
+
+.form-flex.error {
+    border: 1px solid var(--cl-primary-red);
+}
+
+.form-flex.error .form-symbol {
+    background-color: var(--cl-primary-red);
+    color: var(--cl-neutral);
+}
+
+
+.form-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+}
+
+.form-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+}
+
+.form-column .form-item {
+    margin: 0;
+}
+
+.form-alert {
+    color: var(--cl-primary-red);
+    display: none;
+}
+
+.mortgage-calculator {
+    background-color: var(--cl-neutral);
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.mortgage-calculator > * {
+    padding: 2.5rem 2rem;
+}
+
+.mortgage-calculator .mortgage-input {
+    color: var(--cl-neutral-900);
+}
+
+.mortgage-calculator .mortgage-input .header h2 {
+    font-size: 1.5rem;
+    font-weight: var(--fw-700);
+}
+
+.mortgage-calculator .mortgage-input .light-text {
+    color: var(--cl-neutral-700);
+    font-weight: var(--fw-500);
+}
+
+.mortgage-calculator .mortgage-input .header {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mortgage-calculator .mortgage-input .header button {
+    background-color: transparent;
+    color: var(--cl-neutral-500);
+    text-decoration: underline;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    text-decoration: underline;
+    border: 0;
+}
+
+
+.mortgage-calculator .mortgage-input .header button:hover {
+    color: var(--cl-neutral-900);
+}
+
+.mortgage-calculator .mortgage-input .calculate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 0px solid var(--cl-primary-lime);
+    background-color: var(--cl-primary-lime);
+    color: var(--cl-neutral-900);
+    padding: 0.75rem 2rem;
+    border-radius: 1.5rem;
+    font-weight: var(--fw-700);
+}
+
+.mortgage-calculator .mortgage-input .calculate-btn:hover {
+    background-color: var(--cl-primary-lime-1);
+}
+
+.mortgage-calculator .mortgage-stats {
+    display: grid;
+    place-content: center;
+    background-color: var(--cl-neutral-900);
+    color: var(--cl-neutral);
+    border-radius: 0 0 0 4rem;
+}
+
+.mortgage-calculator .mortgage-stats .light-text {
+    color: var(--cl-neutral-500);
+    font-weight: var(--fw-500);
+}
+
+.mortgage-calculator .mortgage-stats .default-text {
+    /* margin-top: 5rem; */
+    text-align: center;
+}
+
+.mortgage-calculator .mortgage-stats.default-text.hide {
+    display: none;
+}
+
+.mortgage-calculator .mortgage-stats .default-text img {
+    margin: auto;
+}
+
+
+.mortgage-calculator .mortgage-stats .default-text h2 {
+    margin-bottom: 1rem;
+}
+
+.mortgage-calculator .mortgage-stats .default-text.hide {
+    display: none;
+}
+
+.mortgage-calculator .mortgage-stats .calculations-container {
+    display: none;
+}
+
+.mortgage-calculator .mortgage-stats  .calculations-container.show{
+    display: block;
+} 
+
+.mortgage-calculator .mortgage-stats  .calculations-container .light-text {
+    margin: 1rem 0 2rem;
+}
+
+.mortgage-calculator .mortgage-stats .calculations-container .calculation-stat {
+    background-color: var(--cl-neutral-1000);
+    padding: 1.5rem;
+    border-top: 4px solid var(--cl-primary-lime);
+    border-radius: 1rem;
+}
+
+
+.mortgage-calculator .mortgage-stats .calculations-container .calculation-stat .light-text {
+    margin: 0 0 1rem;
+}
+
+

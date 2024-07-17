@@ -39,7 +39,7 @@
         <div class="form-group">
           <div class="form-column">
             <div class="form-item">
-              <label for="morgage-term" class="light-text">Mortgage Term</label>
+              <label class="light-text" for="mortgage-term" name="mortgage-term">Mortgage Term</label>
               <div class="form-flex" id="mortgage-term-main">
                 <input type="number" id="mortgage-term" name="mortgage-term" required>
                 <p class="form-symbol">years</p>
@@ -47,9 +47,9 @@
               <p class="form-alert" id="term-alert">This field is required</p>
             </div>
             <div class="form-item">
-              <label for="intererst-rate" class="light-text">Interest Rate</label>
+              <label for="interest-rate" class="light-text">Interest Rate</label>
               <div class="form-flex" id="mortgage-interest-main">
-                <input type="number" id="interest-rate" name="interest-rate" step="0.01" required>
+                <input type="number" id="interest-rate" class="interest-rate" name="interest-rate" step="0.01" required>
                 <p class="form-symbol">%</p>
               </div>
              <p class="form-alert" id="interest-alert">This field is required</p>
@@ -58,7 +58,7 @@
         </div>
 
         <div class="form-group">
-          <label for="mortgage-type" class="light-text">Mortgage Type</label>
+          <label class="light-text">Mortgage Type</label>
           <div class="radio-input">
             <input type="radio" id="repayment" class="mortgage-type" name="mortgage-type" value="repayment" required>
             <label for="repayment">Repayment</label>
@@ -71,7 +71,7 @@
         </div>
 
         <div class="form-group">
-          <button id="calculate-btn" type="button">
+          <button class="calculate-btn" id="calculate-btn" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
               <path fill="#133041" d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"/>
             </svg>
